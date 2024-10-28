@@ -114,6 +114,15 @@
                     <option value="aluguel">Aluguel</option>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="interesse_contato">Interesse de Contato:</label>
+                <select id="interesse_contato" name="interesse_contato" required>
+                    <option value="">Selecione...</option>
+                    <option value="urgente">Urgente</option>
+                    <option value="media">Média Urgência</option>
+                    <option value="sem_urgencia">Sem Urgência</option>
+                </select>
+            </div>
             <button type="submit">Enviar</button>
             <div class="success-message" id="successMessage">Dados enviados com sucesso!</div>
         </form>
@@ -124,7 +133,7 @@
             event.preventDefault();
             
             const formData = new FormData(this);
-            fetch("https://paularrabelo.app.n8n.cloud/webhook-test/6789024e-f4d6-4572-b3ec-5656c7ae9776", {
+            fetch("https://YOUR_N8N_INSTANCE_URL/webhook/formulario-n8n", {
                 method: "POST",
                 body: formData
             })
